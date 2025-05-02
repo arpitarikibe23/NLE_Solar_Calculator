@@ -47,7 +47,8 @@ label {
   font-weight: bold;
 }
 
-input[type="text"], select {
+input[type="text"],
+select {
   width: 100%;
   padding: 0.9rem;
   font-size: 1.1rem;
@@ -82,6 +83,23 @@ button:hover {
   background: #f57f17;
 }
 
+#coordinates {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 700px;
+  font-size: 1.15rem;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#coordinates p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
 #result {
   margin-top: 2rem;
   background: rgba(255, 255, 255, 0.95);
@@ -101,20 +119,21 @@ button:hover {
   text-align: center;
 }
 
-#result p {
-  margin-bottom: 0.8rem;
-  line-height: 1.5;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.6rem;
+.result-list {
+  list-style: none;
+  padding: 0;
 }
 
-#result span {
-  font-weight: bold;
+.result-list li {
+  margin-bottom: 1.2rem; /* One-line gap between results */
+  font-size: 1.2rem;     /* Medium text */
+  font-weight: normal;   /* Unbold text */
+  color: #333;
+}
+
+.result-list span {
+  font-weight: bold ;
   color: #004d40;
-}
-
-#result p:last-child {
-  border-bottom: none;
 }
 
 .suggestions {
@@ -137,8 +156,6 @@ button:hover {
 .suggestions div:hover {
   background-color: #f0f0f0;
 }
-
-
 
 
 
