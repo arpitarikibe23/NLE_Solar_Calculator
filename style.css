@@ -1,56 +1,120 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  padding: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  max-width: 600px;
-  margin: auto;
-  background: white;
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('images/home-mobile.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #f4550c;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 700px;
+  font-size: 1.25rem;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
 input[type="text"], select {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
+  padding: 0.9rem;
+  font-size: 1.1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .radio-group {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.radio-group label {
+  font-weight: normal;
 }
 
 button {
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 1.5rem;
   background: #f9a825;
   border: none;
-  color: white;
-  font-size: 1rem;
-  border-radius: 4px;
+  color: #000;
+  font-size: 1.2rem;
+  border-radius: 6px;
   cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #f57f17;
 }
 
 #result {
   margin-top: 2rem;
-  background: #e0f7fa;
-  padding: 1rem;
-  border-radius: 4px;
-  display: none;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 700px;
+  font-size: 1.15rem;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#result h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #1b5e20;
+  text-align: center;
+}
+
+#result p {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.6rem;
+}
+
+#result span {
+  font-weight: bold;
+  color: #004d40;
+}
+
+#result p:last-child {
+  border-bottom: none;
 }
 
 .suggestions {
@@ -60,6 +124,9 @@ button {
   background: white;
   border-radius: 4px;
   margin-top: 5px;
+  color: #000;
+  z-index: 10;
+  position: relative;
 }
 
 .suggestions div {
@@ -72,3 +139,152 @@ button {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('images/home-mobile.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  color: #fff;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 700px;
+  font-size: 1.25rem;
+  color: #000;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+button {
+  padding: 1rem 1.5rem;
+  background: #f9a825;
+  border: none;
+  color: rgb(17, 11, 11);
+  font-size: 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background: #f57f17;
+}
+
+#result {
+  margin-top: 2rem;
+  background: rgba(224, 247, 250, 0.95);
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.suggestions {
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 4px;
+  margin-top: 5px;
+  color: #000;
+}
+
+.suggestions div {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background-color: #f0f0f0;
+}*/

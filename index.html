@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,28 +8,26 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<div class="container">
   <h1>NLE Solar Calculator</h1>
-
-  <div class="form-group">
-    <label for="location">📍 Enter Your Location</label>
-    <input id="location" type="text" placeholder="Start typing..." autocomplete="off" />
-    <div id="suggestions" class="suggestions"></div>
-  </div>
 
   <form id="solarForm">
     <div class="form-group">
       <label>Building Type</label>
       <div class="radio-group">
-        <label><input type="radio" name="buildingType" value="existing" checked> Existing</label>
-        <label><input type="radio" name="buildingType" value="new"> New</label>
+        <label><input type="radio" name="buildingType" value="existing"> Existing Building</label>
+        <label><input type="radio" name="buildingType" value="new"> New Building</label>
       </div>
     </div>
 
-    <div class="form-group" id="billInput">
+    <div class="form-group">
+      <label for="location">📍 Enter Your Location</label>
+      <input id="location" type="text" placeholder="Start typing..." autocomplete="off" />
+      <div id="suggestions" class="suggestions"></div>
+    </div>
+
+    <div class="form-group" id="billInput" style="display: none;">
       <label>Average Monthly Bill (₹)</label>
-      <input type="text" id="monthlyBill" required>
+      <input type="text" id="monthlyBill">
     </div>
 
     <div class="form-group" id="loadInput" style="display: none;">
@@ -36,7 +35,107 @@
       <input type="text" id="sanctionedLoad">
     </div>
 
+    <div class="form-group" id="consumerGroup" style="display: none;">
+      <label>Consumer Category</label>
+      <select id="consumerType" required>
+        <option value="R">Residential</option>
+        <option value="C">Commercial</option>
+        <option value="I">Industrial</option>
+      </select>
+    </div>
+
+    <button type="submit">Calculate</button>
+  </form>
+
+  <!-- NEW COORDINATES SECTION -->
+  <div id="coordinates" class="coordinates-box" style="display: none;">
+    <p><strong>🌞 Selected Coordinates:</strong></p>
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+    <p>Estimated Solar Potential: <span id="solarPotential">~5.5 kWh/m²/day (placeholder)</span></p>
+  </div>
+
+  <div id="result" style="display: none;">
+    <h3>Calculation Result</h3>
+    <ul class="result-list">
+      <li><strong>Suggested System Size:</strong> <span id="systemSize"></span> kW</li>
+      <li><strong>Estimated Monthly Generation:</strong> <span id="monthlyGen"></span> kWh</li>
+      <li><strong>Estimated Monthly Savings:</strong> ₹<span id="monthlySavings"></span></li>
+      <li><strong>Annual Savings:</strong> ₹<span id="annualSavings"></span></li>
+      <li><strong>Total System Cost:</strong> ₹<span id="totalCost"></span></li>
+      <li><strong>Payback Period:</strong> <span id="payback"></span></li>
+      <li><strong>Area Required:</strong> <span id="areaRequired"></span> sq. ft</li>
+      <li><strong>CO₂ Saved Per Year:</strong> <span id="co2"></span> kg</li>
+      <li><strong>Your Environmental Impact:</strong><br>
+        🌳 <span id="treesSaved"></span> trees planted<br>
+        🚗 <span id="carsOffRoad"></span> cars off the road
+      </li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- this is the version one final code <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solar Calculator Clone - NLE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>NLE Solar Calculator</h1>
+
+  <form id="solarForm">
     <div class="form-group">
+      <label>Building Type</label>
+      <div class="radio-group">
+        <label><input type="radio" name="buildingType" value="existing"> Existing Building</label>
+        <label><input type="radio" name="buildingType" value="new"> New Building</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="location">📍 Enter Your Location</label>
+      <input id="location" type="text" placeholder="Start typing..." autocomplete="off" />
+      <div id="suggestions" class="suggestions"></div>
+    </div>
+
+    <div class="form-group" id="billInput" style="display: none;">
+      <label>Average Monthly Bill (₹)</label>
+      <input type="text" id="monthlyBill">
+    </div>
+
+    <div class="form-group" id="loadInput" style="display: none;">
+      <label>Sanctioned Load (kW)</label>
+      <input type="text" id="sanctionedLoad">
+    </div>
+
+    <div class="form-group" id="consumerGroup" style="display: none;">
       <label>Consumer Category</label>
       <select id="consumerType" required>
         <option value="R">Residential</option>
@@ -56,16 +155,16 @@
     <p><strong>Estimated Monthly Generation:</strong> <span id="monthlyGen"></span> kWh</p>
     <p><strong>Estimated Monthly Savings:</strong> ₹<span id="monthlySavings"></span></p>
     <p><strong>Annual Savings:</strong> ₹<span id="annualSavings"></span></p>
+    <p><strong>Total System Cost:</strong> ₹<span id="totalCost"></span></p>
+    <p><strong>Payback Period:</strong> <span id="payback"></span></p>
     <p><strong>Area Required for Solar System:</strong> <span id="areaRequired"></span> sq. ft</p>
-    <p><strong>Payback Period:</strong> <span id="payback"></span> years</p>
     <p><strong>CO₂ Saved Per Year:</strong> <span id="co2"></span> kg</p>
     <p><strong>Your Contribution to the Environment:</strong><br>
       🌳 <span id="treesSaved"></span> trees added<br>
       🚗 <span id="carsOffRoad"></span> cars off the road
     </p>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-</html>
+</html>-->
